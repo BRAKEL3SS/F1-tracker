@@ -1,0 +1,29 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Team Name: </div>
+  <div><%= team.name %></div>
+  <div>Base of Operations: </div>
+  <div><%= team.location %></div>
+  <div>First Driver </div>
+  <div><%= team.drivers[0] %></div>
+  <div>Second Driver </div>
+  <div><%= team.drivers[1] %></div>
+</section>
+<br><br><h2>Add a Driver</h2>
+<form id="add-driver-form" method="POST"
+  action="/teams/<%= team._id %>/drivers">
+  <label>Driver Name:
+  <input type="text" name="name">
+  </label><br>    
+  <label>Driver Age:
+    <input type="number" name="age">
+  </label><br>
+  <label>Home Nation:
+    <input type="text" name="homeCountry">
+  </label><br>    
+  <input type="submit" value="Add Driver">
+</form>
+
+  
+<%- include('../partials/footer') %>

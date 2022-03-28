@@ -1,9 +1,11 @@
+const team = require('../models/team')
 const Team = require('../models/team')
 
 module.exports = {
     index,
     new: newTeam,
-    create
+    create,
+    show
 }
 
 function index(req, res) {
@@ -22,3 +24,9 @@ function create(req, res) {
         res.redirect('/teams')
     })
 }
+
+function show(req, res) {
+    Team.findById(req.params.id, function(err, team) {
+        res.render('teams/show', { title: 'Team Detail', team });
+    });
+  }
