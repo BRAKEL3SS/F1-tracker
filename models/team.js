@@ -17,3 +17,5 @@ const teamSchema = new Schema({
 }, {
     timestamps: true
 })
+
+module.exports = mongoose.model('Team', teamSchema)

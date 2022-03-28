@@ -1,0 +1,12 @@
+<%- include('../partials/header') %>
+    <h2>Add a new Team</h2>
+    <form class="new-form" action="/teams" method="POST">
+    <label>Team Name:
+        <input type="text" name="name">
+    </label><br>
+    <label>Base of Operations
+        <input type="text" name="location">
+    </label><br>
+    <input type="submit" value="Add Team">
+    </form>
+<%- include('../partials/footer') %>
