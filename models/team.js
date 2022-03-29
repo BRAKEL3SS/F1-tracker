@@ -5,7 +5,10 @@ const Schema = mongoose.Schema
 const driverSchema = new Schema({
     name: String,
     age: Number,
-    homeCountry: String
+    homeCountry: String,
+    user: {type: Schema.Types.ObjectId, ref: 'User'},
+    userName: String,
+    userAvatar: String
 }, {
     timestamps: true
 })

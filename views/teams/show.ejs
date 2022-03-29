@@ -33,6 +33,13 @@
           <td><%= driver.name %></td>
           <td><%= driver.age %></td>
           <td><%= driver.homeCountry %></td>
+          <td>
+            <% if (user && user._id.equals(driver.user)) { %>
+              <form action="/drivers/<%= driver._id %>?_method=DELETE" method="POST">
+                <button type="submit">X</button>
+              </form>
+            <% } %>
+          </td>
           <% }) %>
         </tr>
     </tbody>
