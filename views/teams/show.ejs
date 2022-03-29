@@ -1,15 +1,41 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Team Name: </div>
-  <div><%= team.name %></div>
-  <div>Base of Operations: </div>
-  <div><%= team.location %></div>
-  <div>First Driver </div>
-  <div><%= team.drivers[0] %></div>
-  <div>Second Driver </div>
-  <div><%= team.drivers[1] %></div>
+  <table>
+    <thead>
+      <tr>
+        <th>Team Name</th>
+        <th>Base of Operations</th>
+        <th>Current Number of Drivers</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr>
+          <td><%= team.name %></td>
+          <td><%= team.location %></td>
+          <td><%= team.drivers.length %></td>
+        </tr>
+    </tbody>
+  </table>
 </section>
+<table>
+    <thead>
+      <tr>
+        <th>Driver Name</th>
+        <th>Driver Age</th>
+        <th>Home Nation</th>
+      </tr>
+    </thead>
+    <tbody>
+        <% team.drivers.forEach(function(driver) { %>
+        <tr>
+          <td><%= driver.name %></td>
+          <td><%= driver.age %></td>
+          <td><%= driver.homeCountry %></td>
+          <% }) %>
+        </tr>
+    </tbody>
+  </table>
 <br><br><h2>Add a Driver</h2>
 <form id="add-driver-form" method="POST"
   action="/teams/<%= team._id %>/drivers">

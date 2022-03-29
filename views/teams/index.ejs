@@ -13,8 +13,9 @@
         <tr>
           <td><%= team.name %></td>
           <td><%= team.location %></td>
-          <td><%= team.drivers[0] %></td>
-          <td><%= team.drivers[1] %></td>
+          <% team.drivers.forEach(function(driver) { %>
+          <td><%= driver.name %></td>
+          <% }) %>
           <td><a href="/teams/<%= team._id %>">DETAILS</a></td>
         </tr>
       <!-- Close the forEach using EJS here -->
