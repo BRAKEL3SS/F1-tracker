@@ -17,6 +17,10 @@
           <td><%= driver.name %></td>
           <% }) %>
           <td><a href="/teams/<%= team._id %>">DETAILS</a></td>
+          <td><form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+          </form>
+          </td>
         </tr>
       <!-- Close the forEach using EJS here -->
       <% }) %>
