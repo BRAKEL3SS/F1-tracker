@@ -1,5 +1,5 @@
 <%- include('../partials/header') %>
-
+<div class="section">
 <section id="show-page">
   <table>
     <thead>
@@ -33,6 +33,7 @@
           <td><%= driver.name %></td>
           <td><%= driver.age %></td>
           <td><%= driver.homeCountry %></td>
+          <td><a href="/drivers/<%= driver._id %>/edit %>">EDIT</a></td>
           <td>
             <% if (user && user._id.equals(driver.user)) { %>
               <form action="/drivers/<%= driver._id %>?_method=DELETE" method="POST">
@@ -61,6 +62,7 @@
   <input type="submit" value="Add Driver">
 </form>
 <% } %>
+</div>
 
   
 <%- include('../partials/footer') %>

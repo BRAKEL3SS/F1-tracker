@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+<div class="section">
+    <h2>Edit Driver</h2>
+    <form id="add-driver-form" method="POST"
+      action="/drivers/<%= driver._id %>?_method=PUT">
+      <label>New Driver Name:
+      <input type="text" name="name" value="<%= driver.name %>">
+      </label><br>    
+      <label>New Driver Age:
+        <input type="number" name="age" value="<%= driver.age %>">
+      </label><br>
+      <label>New Home Nation:
+        <input type="text" name="homeCountry" value="<%= driver.homeCountry %>">
+      </label><br>    
+      <input type="submit" value="Add Driver">
+    </form>
+</div>
+<%- include('../partials/footer') %>
