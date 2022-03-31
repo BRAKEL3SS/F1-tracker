@@ -69,6 +69,11 @@ nav > a.active {
   cursor: default;
 }
 
+button.delete:hover {
+  background-color: #e21809;
+  box-shadow: 2px;
+}
+
 .new-form {
   color: black;
   display: grid;
@@ -142,6 +147,10 @@ table td {
 #add-driver-form input[type="text"]  {
   color: black
 }
+#add-team-form input[type="number"],
+#add-driver-form input[type="number"]  {
+  color: black
+}
 
 .login {
   display: flex;
@@ -156,4 +165,7 @@ table td {
 
 button {
   color: black
+}
+#car {
+  height: 40vh
 }
